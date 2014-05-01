@@ -11,19 +11,23 @@
     </div>
 
     <div class="row">
-        <p class="CTA_caption">Here is the caption for the CTA</p>
+        <p class="CTA_caption">Welcome to the Loelo House site</p>
     </div>
 
     <div class="row">
         <div class="large-8 columns">
-            <h2 class"blogtitle"><a href="blog_detail.html">How to play like a noob.</a></h2>
-            <p class="blogdescription">So you want to play like a noob? Well in this post i will cover everything you need to know. Everything from fail flashes through dragon to falling into baits to feed the enemy team. This comprehensive guide into all thing noob should be the last thing you will every need. If you can think of something we don’t cover in this guide please feel free to send us comment in the non-exsistant comment area and we will be sure to ignore your response in a timely fashion.<a href="blog_detail.html"> Read Me...</a></p>
-            <p class="blogauthor">Date created: 03/25/2014   Author: Laothud</p>
+            <?php foreach ($posts as $post): ?>
+            <h2 class"blogtitle"><a href="blog_detail.html"><?= $post->title ?></a></h2>
+            <p class="blogdescription"><?= $post->description ?><a href="blog_detail.html"> Read Me...</a></p>
+            <p class="blogauthor">Date created: <?= $post->created_at ?>   Author: <?= $post->username ?></p>
+            <?php endforeach; ?>
         </div>
         <div class="large-4 columns">
             <h1 class="header_section">Cast</h1>
+            <?php foreach ($users as $user): ?>
             <a href="#"><img class="th" src="img/temp_member.png" style="float:left; margin-right:5px;"></a>
-            <h3 class="playername">laothud</h3>
-            <p class="quote">"So I kill the creep wave right?"</p>
+            <h3 class="playername"><?= $user->name ?></h3>
+            <p class="quote"><?= $user->quote ?></p>
+            <?php endforeach; ?>
         </div>
     </div>
