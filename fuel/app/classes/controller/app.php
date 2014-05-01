@@ -6,7 +6,7 @@
 abstract class Controller_App extends Controller_Template
 {
 	/**
-	 * 
+	 * loads the header and footer needs the if statement to decide what header needs to be loaded.
 	 */
 	public function before()
 	{
