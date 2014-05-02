@@ -25,9 +25,15 @@
         <div class="large-4 columns">
             <h1 class="header_section">Cast</h1>
             <?php foreach ($users as $user): ?>
-            <a href="#"><img class="th" src="img/temp_member.png" style="float:left; margin-right:5px;"></a>
-            <h3 class="playername"><?= $user->name ?></h3>
-            <p class="quote"><?= $user->quote ?></p>
+            <?
+                if($user->name == "Admin"){
+                }else{?>
+                    <div class="cast">
+                        <img class="th" src="img/temp_member.png" style="float:left; margin-right:5px;">
+                        <h3 class="playername"><?= $user->name ?></h3>
+                        <p class="quote"><?= $user->quote ?></p>
+                    </div>
+                <?}?>
             <?php endforeach; ?>
         </div>
     </div>

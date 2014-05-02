@@ -221,4 +221,13 @@ table tr td img{
 	margin-top: 20px;
 }
 
+.th{
+	clear: both;
+	margin-top: 5px;
+}
+
+.cast{
+	height: 81px;
+	margin-bottom: 5px;
+}
 
