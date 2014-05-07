@@ -1,8 +1,8 @@
-<form>
+<form method="post">
   <div class="row">
     <div class="large-12 columns">
       <label>Username: 
-        <input type="text" placeholder="Username"/>
+        <input name="username" type="text" placeholder="Username"/>
       </label>
     </div>
   </div>
@@ -10,7 +10,7 @@
   <div class="row">
     <div class="large-12 columns">
       <label>Password: 
-        <input type="password"/>
+        <input name="password" type="password"/>
       </label>
     </div>
   </div>

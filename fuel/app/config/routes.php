@@ -4,6 +4,6 @@ return array(
 	'video' => 'video',
 	'art' => 'art',
 	'events' => 'events',
-	'login' => 'login',
+	'login' => 'auth/login',
 	'_404_'   => 'welcome/404',    // The main 404 route
 );

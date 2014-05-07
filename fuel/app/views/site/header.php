@@ -22,10 +22,10 @@
       <section class="top-bar-section">
         <!-- Right Nav Section -->
         <ul class="right">
-          <li><a href="video">Video</a></li>
-          <li><a href="art">Art</a></li>
-          <li><a href="events">Events</a></li>
-          <li><a href="login">Login</a></li>
+          <li><?= Html::anchor('/video', 'Video') ?></li>
+          <li><?= Html::anchor('/art', 'Art') ?></li>
+          <li><?= Html::anchor('/events', 'Events') ?></li>
+          <li><?= Html::anchor('/login', 'Login') ?></li>
         </ul>
       </section>
     </nav>
