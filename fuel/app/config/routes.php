@@ -5,5 +5,6 @@ return array(
 	'art' => 'art',
 	'events' => 'events',
 	'login' => 'auth/login',
+	'admin' => 'admin',
 	'_404_'   => 'welcome/404',    // The main 404 route
 );

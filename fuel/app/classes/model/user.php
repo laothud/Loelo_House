@@ -1,27 +1,27 @@
 <?php
 
-class Model_User extends Orm\Model
+class Model_User extends Auth\Model\Auth_User
 {
 	/**
 	 *
 	 */
-
-	protected static $_table_name = '_users';
-
-	protected static $_properties = array(
-		'id',
-		'name',
-		'password', 
-		'quote',
-    );
+	public function quote()
+	{
+		return isset($this->quote) ? $this->quote : null;
+	}
 
     public static function get_results()
     {
-		return static::query()->order_by('name')->get();
+		return static::query()->order_by('username')->get();
     }
 
-    public static function get_one($name)
+    public static function get_by_id($id)
     {
-    	return static::query()->where('name',$name)->get_one();
+    	return static::query()->where('id', $id)->get_one();
+    }
+
+    public static function get_one($username)
+    {
+    	return static::query()->where('username',$username)->get_one();
     }
 }

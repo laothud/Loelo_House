@@ -26,12 +26,12 @@
             <h1 class="header_section">Cast</h1>
             <?php foreach ($users as $user): ?>
             <?
-                if($user->name == "Admin"){
+                if($user->username == "Admin"){
                 }else{?>
                     <div class="cast">
                         <img class="th" src="img/temp_member.png" style="float:left; margin-right:5px;">
-                        <h3 class="playername"><?= $user->name ?></h3>
-                        <p class="quote"><?= $user->quote ?></p>
+                        <h3 class="playername"><?= $user->username ?></h3>
+                        <p class="quote"><?= $user->quote() ?></p>
                     </div>
                 <?}?>
             <?php endforeach; ?>
