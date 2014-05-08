@@ -6,11 +6,15 @@ class Controller_Auth extends Controller_App
 	{
 		if ($this->is_logged_in())
 	    {
-	        Response::redirect('admin');
+	    	$sessionUsername = Session::get('username');
+		    $user = Model_User::get_one($sessionUsername);
+		    if ($user->group_id == "6") {
+		    	Response::redirect('admin');
+		    }else if ($user->group_id == "3") {
+		    	Response::redirect('user');
+		    }
+	        
 	    }
-
-
-	    
 	    $this->template->content = View::forge('site/login');
 	}
 
@@ -27,7 +31,7 @@ class Controller_Auth extends Controller_App
 		    $user = Model_User::get_one($sessionUsername);
 	      	//redirect to dash of said user group
 	      	if ($user->group_id == 6) {
-	      		Response::redirect('admin_dash');
+	      		Response::redirect('admin');
 	      	}
 	        
 	        Response::redirect('user_dash');
@@ -57,7 +61,7 @@ class Controller_Auth extends Controller_App
 		            //either a 6 for admin or a 3 for user.
 		            if ($user->group_id == 6) 
 		            {
-			      		Response::redirect('admin_dash');
+			      		Response::redirect('admin');
 			      	}
 
 			      	if ($user->group_id == 3) 
@@ -79,6 +83,18 @@ class Controller_Auth extends Controller_App
 		            Messages::error(__('login.failure'));
 			}
 	    }
+	}
+
+	/**
+	 *
+	 */
+	public function action_logout()
+	{
+	    // logout
+	    Auth::logout();
+
+	    // return to login
+	    Response::redirect('login');
 	}
 
 }
