@@ -20,7 +20,7 @@ if(isset($user)){
         <nav class="top-bar" data-topbar>
           <ul class="title-area">
             <li class="name">
-              <h1><a href="index.html"><img src="img/logo.png"></a></h1>
+              <h1><?= Html::anchor('admin', '<img src="img/logo.png">') ?></h1>
             </li>
           </ul>
 
@@ -30,11 +30,11 @@ if(isset($user)){
               <li class="has-dropdown">
                 <a href="#">Admin Tools</a>
                 <ul class="dropdown">
-                  <li><a href="admin_dash.html">Blog</a></li>
-                    <li><a href="admin_add_user.html">Users</a></li>
-                  <li><a href="admin_art.html">Art</a></li>
-                    <li><a href="admin_video.html">Video</a></li>
-                    <li><a href="admin_events.html">Events</a></li>
+                  <li><?= Html::anchor('admin', 'Blog') ?></li>
+                    <li><?= Html::anchor('admin_user', 'Users') ?></li>
+                  <li><?= Html::anchor('admin_art', 'Art') ?></li>
+                    <li><?= Html::anchor('admin_video', 'Video') ?></li>
+                    <li><?= Html::anchor('admin_events', 'Events') ?></li>
                 </ul>
             </li>
               <li><?= Html::anchor('logout', 'Logout') ?></li>
@@ -67,6 +67,9 @@ if(isset($user)){
           <section class="top-bar-section">
             <!-- Right Nav Section -->
             <ul class="right">
+              <li  class="welcome">
+                <p class="welcome">Welcome <?echo $sessionUsername?></p>
+              </li>
               <li><?= Html::anchor('logout', 'Logout') ?></li>
             </ul>
           </section>

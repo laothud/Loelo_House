@@ -231,3 +231,11 @@ table tr td img{
 	margin-bottom: 5px;
 }
 
+.welcome{
+	line-height: 1.6;
+	font-size: 20pt;
+	background-color: #FFFFFF;
+	height: 45px;
+	font-weight: bold;
+}
+
