@@ -33,4 +33,9 @@ class Model_Post extends Orm\Model
     	return static::query()->order_by('created_at', 'desc')->get_one();
     }
 
+    public static function get_by_username($username)
+    {
+    	return static::query()->where('username', '=', $username)->order_by('created_at', 'desc')->get();
+    }
+
 }

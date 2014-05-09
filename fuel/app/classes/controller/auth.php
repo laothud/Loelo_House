@@ -34,7 +34,7 @@ class Controller_Auth extends Controller_App
 	      		Response::redirect('admin');
 	      	}
 	        
-	        Response::redirect('user_dash');
+	        Response::redirect('user');
 	    }
 
 	    // was the login form posted?
@@ -66,7 +66,7 @@ class Controller_Auth extends Controller_App
 
 			      	if ($user->group_id == 3) 
 			      	{
-			      		Response::redirect('user_dash');
+			      		Response::redirect('user');
 			      	}
 
 

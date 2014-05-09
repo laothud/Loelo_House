@@ -60,14 +60,14 @@ if(isset($user)){
         <nav class="top-bar" data-topbar>
           <ul class="title-area">
             <li class="name">
-              <h1><a href="index.html"><img src="img/logo.png"></a></h1>
+              <h1><?= Html::anchor('user', '<img src="img/logo.png">') ?></h1>
             </li>
           </ul>
 
           <section class="top-bar-section">
             <!-- Right Nav Section -->
             <ul class="right">
-              <li><a href="index.html">Logout</a></li>
+              <li><?= Html::anchor('logout', 'Logout') ?></li>
             </ul>
           </section>
         </nav>
