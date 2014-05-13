@@ -1,16 +1,16 @@
 <?php
 
-class Model_Video extends Orm\Model
+class Model_Event extends Orm\Model
 {
 	/**
 	 *
 	 */
 	protected static $_properties = array(
 		'id',
-		'videocode',
-		'userid', 
+		'title',
+		'description',
+		'userid',
 		'created_at',
-		'username',
     );
 
     protected static $_observers = array(

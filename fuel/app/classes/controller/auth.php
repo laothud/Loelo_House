@@ -1,7 +1,9 @@
 <?php
 class Controller_Auth extends Controller_App
 {
-
+	/**
+	 *
+	 */
 	public function get_login()
 	{
 		if ($this->is_logged_in())
