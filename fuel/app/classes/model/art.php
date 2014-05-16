@@ -29,4 +29,28 @@ class Model_Art extends Orm\Model
     {
     	return static::query()->order_by('created_at', 'desc')->get_one();
     }
+
+    /**
+	 *add a art to the DB
+	 */
+	public function newart($art)
+	{
+		
+	}
+
+	/**
+	 *delete a art in the DB
+	 */
+	public function deleteart($art)
+	{
+		
+	}
+
+	/**
+	 *update a art in the DB
+	 */
+	public function updateart($art)
+	{
+		
+	}
 }

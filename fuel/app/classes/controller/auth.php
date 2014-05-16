@@ -75,14 +75,12 @@ class Controller_Auth extends Controller_App
 		        }
 		        else
 		        {
-		            // login failed, show error
-		            Messages::error(__('login.failure'));
+		           
 		        }
 			}
 			else
 			{
-			    // login failed, show error
-		            Messages::error(__('login.failure'));
+			    
 			}
 	    }
 	}

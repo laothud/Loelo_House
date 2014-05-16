@@ -8,6 +8,8 @@ return array(
 	'logout' => 'auth/logout',
 	'admin' => 'admin',
 	'admin_user' => 'admin/user',
+	'admin_user_update' => 'admin/userupdate',
+	'admin_user_delete/:user' => 'admin/userdelete',
 	'admin_art' => 'admin/art',
 	'admin_video' => 'admin/video',
 	'admin_events' => 'admin/events',

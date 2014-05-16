@@ -28,14 +28,38 @@ class Model_Post extends Orm\Model
 		return static::query()->order_by('created_at', 'desc')->get();
     }
 
-    public static function get_one()
+    public static function get_one($postid)
     {
-    	return static::query()->order_by('created_at', 'desc')->get_one();
+    	return static::query()->where('id',$postid)->get_one();
     }
 
     public static function get_by_username($username)
     {
     	return static::query()->where('username', '=', $username)->order_by('created_at', 'desc')->get();
     }
+
+    /**
+	 *add a post to the DB
+	 */
+	public function newpost($post)
+	{
+		
+	}
+
+	/**
+	 *delete a post in the DB
+	 */
+	public function deletepost($post)
+	{
+		
+	}
+
+	/**
+	 *update a post in the DB
+	 */
+	public function updatepost($post)
+	{
+		
+	}
 
 }

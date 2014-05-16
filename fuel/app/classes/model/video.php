@@ -29,4 +29,28 @@ class Model_Video extends Orm\Model
     {
     	return static::query()->order_by('created_at', 'desc')->get_one();
     }
+
+    /**
+	 *add a video to the DB
+	 */
+	public function newvideo($video)
+	{
+		
+	}
+
+	/**
+	 *delete a video in the DB
+	 */
+	public function deletevideo($video)
+	{
+		
+	}
+
+	/**
+	 *update a video in the DB
+	 */
+	public function updatevideo($video)
+	{
+		
+	}
 }
