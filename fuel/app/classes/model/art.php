@@ -25,9 +25,9 @@ class Model_Art extends Orm\Model
 		return static::query()->order_by('created_at', 'desc')->get();
     }
 
-    public static function get_one()
+    public static function get_one($artid)
     {
-    	return static::query()->order_by('created_at', 'desc')->get_one();
+    	return static::query()->order_by('created_at', 'desc')->get_one($artid);
     }
 
     /**
@@ -35,7 +35,12 @@ class Model_Art extends Orm\Model
 	 */
 	public function newart($art)
 	{
-		
+		$newartwork = new Model_Art();
+		$newartwork->artcode = $art->artcode;
+		$newartwork->userid = $art->userid;
+		$newartwork->username = $art->username;
+		$newartwork->save();
+
 	}
 
 	/**
@@ -43,14 +48,7 @@ class Model_Art extends Orm\Model
 	 */
 	public function deleteart($art)
 	{
-		
-	}
-
-	/**
-	 *update a art in the DB
-	 */
-	public function updateart($art)
-	{
-		
+		$deletedArt = Model_Art::find($art);
+		$deletedArt->delete();
 	}
 }

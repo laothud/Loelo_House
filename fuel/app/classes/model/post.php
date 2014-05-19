@@ -43,7 +43,12 @@ class Model_Post extends Orm\Model
 	 */
 	public function newpost($post)
 	{
-		
+		$newpost = new Model_Post();
+		$newpost->title = $post->title;
+		$newpost->description = $post->description;
+		$newpost->userid = $post->userid;
+		$newpost->username = $post->username;
+		$newpost->save();	
 	}
 
 	/**
@@ -51,7 +56,8 @@ class Model_Post extends Orm\Model
 	 */
 	public function deletepost($post)
 	{
-		
+		$deletedPost = Model_Post::find($post);
+		$deletedPost->delete();
 	}
 
 	/**
@@ -59,7 +65,10 @@ class Model_Post extends Orm\Model
 	 */
 	public function updatepost($post)
 	{
-		
+		$updatedPost = Model_Post::find($post);
+		$updatedPost->title = $post->title;
+		$updatedPost->description = $post->description;
+		$updatedPost->save();
 	}
 
 }

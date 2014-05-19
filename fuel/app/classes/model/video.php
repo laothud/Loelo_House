@@ -35,7 +35,11 @@ class Model_Video extends Orm\Model
 	 */
 	public function newvideo($video)
 	{
-		
+		$newvideo = new Model_Video();
+		$newvideo->videocode = $video->videocode;
+		$newvideo->userid = $video->userid;
+		$newvideo->username = $video->username;
+		$newvideo->save();
 	}
 
 	/**
@@ -43,14 +47,8 @@ class Model_Video extends Orm\Model
 	 */
 	public function deletevideo($video)
 	{
-		
+		$deletedVideo = Model_Video::find($video);
+		$deletedVideo->delete();
 	}
 
-	/**
-	 *update a video in the DB
-	 */
-	public function updatevideo($video)
-	{
-		
-	}
 }
