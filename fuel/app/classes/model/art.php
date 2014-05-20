@@ -30,25 +30,4 @@ class Model_Art extends Orm\Model
     	return static::query()->order_by('created_at', 'desc')->get_one($artid);
     }
 
-    /**
-	 *add a art to the DB
-	 */
-	public function newart($art)
-	{
-		$newartwork = new Model_Art();
-		$newartwork->artcode = $art->artcode;
-		$newartwork->userid = $art->userid;
-		$newartwork->username = $art->username;
-		$newartwork->save();
-
-	}
-
-	/**
-	 *delete a art in the DB
-	 */
-	public function deleteart($art)
-	{
-		$deletedArt = Model_Art::find($art);
-		$deletedArt->delete();
-	}
 }

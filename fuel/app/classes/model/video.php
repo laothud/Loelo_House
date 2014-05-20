@@ -30,25 +30,4 @@ class Model_Video extends Orm\Model
     	return static::query()->order_by('created_at', 'desc')->get_one();
     }
 
-    /**
-	 *add a video to the DB
-	 */
-	public function newvideo($video)
-	{
-		$newvideo = new Model_Video();
-		$newvideo->videocode = $video->videocode;
-		$newvideo->userid = $video->userid;
-		$newvideo->username = $video->username;
-		$newvideo->save();
-	}
-
-	/**
-	 *delete a video in the DB
-	 */
-	public function deletevideo($video)
-	{
-		$deletedVideo = Model_Video::find($video);
-		$deletedVideo->delete();
-	}
-
 }

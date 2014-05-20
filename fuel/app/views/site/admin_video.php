@@ -1,9 +1,9 @@
-<form>
+<?= Form::open(['action' => 'admin_video_newvideo']) ?>
   <div class="row">
     <div class="large-12 columns">
   		<h2>Video Upload</h2>
   	<label>Video Embed Code: 
-    		<input type="text" placeholder="Video Code"/>
+    		<input name="videocode" type="text" placeholder="Video Code"/>
   		</label>
     </div>
   </div>
@@ -13,11 +13,11 @@
       <input type="submit" class="button right" value="Add Video">
     </div>
   </div>
-</form>
+<?= Form::close() ?>
 
 <div class="row">
   <div class="large-12 columns">
-    <table>
+    <table class="large-12 columns">
     	<tr>
     		<th>Video</th>
     		<th>Username</th>
@@ -25,9 +25,9 @@
     	</tr>
       <?php foreach ($videos as $video): ?>
         <tr>
-          <td><img src="<?= $video->videocode?>"></td>
+          <td><img src="https://i1.ytimg.com/vi_webp/<?= $video->videocode?>/mqdefault.webp"></td>
           <td><input type="text" value="<?= $video->username ?>"></td>
-          <td><input type="button" class="button delete_button" value="Delete"></td>
+          <td><a href="admin_video_delete/<?= $video->id ?>" class="button delete_button">Delete</a></td>
         </tr>
       <?php endforeach; ?>
     </table>
