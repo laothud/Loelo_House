@@ -11,77 +11,157 @@ class Controller_User extends Controller_App
 	/**
 	 *add a art to the DB
 	 */
-	public function newart($art)
+	public function action_newart()
 	{
-		$newartwork = new Model_Art();
-		$newartwork->artcode = $art->artcode;
-		$newartwork->userid = $art->userid;
-		$newartwork->username = $art->username;
-		$newartwork->save();
+		$sessionUsername = Session::get('username');
+		$user = Model_User::get_one($sessionUsername);
+		if(isset($user))
+		{
+			if($user->group_id == "6")
+			{
+			  	if (Input::method() == 'POST')
+			    {
+					$newartwork = new Model_Art();
+					$newartwork->artcode = Input::param("artcode");
+					$newartwork->userid = $user->id;
+					$newartwork->username = $sessionUsername;
+					$newartwork->save();
+			    }
+			}
 
+			Response::redirect('admin_art');
+		}
+		else
+		{
+			Response::redirect('login');
+		}
 	}
 
 	/**
 	 *delete a art in the DB
 	 */
-	public function deleteart($art)
+	public function action_deleteart()
 	{
-		$deletedArt = Model_Art::find($art);
-		$deletedArt->delete();
+		if (isset($this)) {
+			$deletedArt = Model_Art::find($this->param("art"));
+			$deletedArt->delete();
+		}
+
+		Response::redirect('admin_art');
+		
 	}
 
 	/**
 	 *add a post to the DB
 	 */
-	public function newpost($post)
+	public function action_newpost()
 	{
-		$newpost = new Model_Post();
-		$newpost->title = $post->title;
-		$newpost->description = $post->description;
-		$newpost->userid = $post->userid;
-		$newpost->username = $post->username;
-		$newpost->save();	
+		$sessionUsername = Session::get('username');
+		$user = Model_User::get_one($sessionUsername);
+		if(isset($user))
+		{
+			if($user->group_id == "6")
+			{
+			  	if (Input::method() == 'POST')
+			    {
+		    		$newpost = new Model_Post();
+					$newpost->title = Input::param("title");
+					$newpost->description = Input::param("description");
+					$newpost->userid = $user->id;
+					$newpost->username = $sessionUsername;
+					$newpost->save();
+			    }
+			}
+			Response::redirect('admin');
+		}
+		else
+		{
+			Response::redirect('login');
+		}
+			
 	}
 
 	/**
 	 *delete a post in the DB
 	 */
-	public function deletepost($post)
+	public function action_deletepost()
 	{
-		$deletedPost = Model_Post::find($post);
-		$deletedPost->delete();
+		if (isset($this)) {
+			$deletedPost = Model_Post::find($this->param("post"));
+			$deletedPost->delete();
+		}
+
+		Response::redirect('admin');
+		
 	}
 
 	/**
 	 *update a post in the DB
 	 */
-	public function updatepost($post)
+	public function action_updatepost()
 	{
-		$updatedPost = Model_Post::find($post);
-		$updatedPost->title = $post->title;
-		$updatedPost->description = $post->description;
-		$updatedPost->save();
+		$sessionUsername = Session::get('username');
+		$user = Model_User::get_one($sessionUsername);
+		if(isset($user))
+		{
+			if($user->group_id == "6")
+			{
+			  	if (Input::method() == 'POST')
+			    {
+					$updatedPost = Model_Post::find(Input::param("updateid"));
+					$updatedPost->title = Input::param("updatetitle");
+					$updatedPost->description = Input::param("updatedescription");
+					$updatedPost->save();
+			    }
+			}
+
+			Response::redirect('admin');
+		}
+		else
+		{
+			Response::redirect('login');
+		}
 	}
 
 	/**
 	 *add a video to the DB
 	 */
-	public function newvideo($video)
+	public function action_newvideo()
 	{
-		$newvideo = new Model_Video();
-		$newvideo->videocode = $video->videocode;
-		$newvideo->userid = $video->userid;
-		$newvideo->username = $video->username;
-		$newvideo->save();
+		$sessionUsername = Session::get('username');
+		$user = Model_User::get_one($sessionUsername);
+		if(isset($user))
+		{
+			if($user->group_id == "6")
+			{
+			  	if (Input::method() == 'POST')
+			    {
+					$newvideo = new Model_Video();
+					$newvideo->videocode = Input::param("videocode");
+					$newvideo->userid = $user->id;;
+					$newvideo->username = $sessionUsername;
+					$newvideo->save();
+			    }
+			}
+			Response::redirect('admin_video');
+		}
+		else
+		{
+			Response::redirect('login');
+		}
 	}
 
 	/**
 	 *delete a video in the DB
 	 */
-	public function deletevideo($video)
+	public function action_deletevideo()
 	{
-		$deletedVideo = Model_Video::find($video);
-		$deletedVideo->delete();
+		if (isset($this)) {
+			$deletedVideo = Model_Video::find($this->param("video"));
+			$deletedVideo->delete();
+		}
+
+		Response::redirect('admin_video');
 	}
 	
 }
