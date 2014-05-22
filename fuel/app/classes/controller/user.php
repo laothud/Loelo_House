@@ -6,6 +6,8 @@ class Controller_User extends Controller_App
 	{
 		$this->template->content = View::forge('site/user_dash');
 		$this->template->content->posts = Model_Post::get_by_username(Session::get('username'));
+		$this->template->content->arts = Model_Art::get_by_username(Session::get('username'));
+		$this->template->content->videos = Model_Video::get_by_username(Session::get('username'));
 	}
 
 	/**
@@ -17,7 +19,7 @@ class Controller_User extends Controller_App
 		$user = Model_User::get_one($sessionUsername);
 		if(isset($user))
 		{
-			if($user->group_id == "6")
+			if($user->group_id == "3")
 			{
 			  	if (Input::method() == 'POST')
 			    {
@@ -29,7 +31,7 @@ class Controller_User extends Controller_App
 			    }
 			}
 
-			Response::redirect('admin_art');
+			Response::redirect('user');
 		}
 		else
 		{
@@ -60,7 +62,7 @@ class Controller_User extends Controller_App
 		$user = Model_User::get_one($sessionUsername);
 		if(isset($user))
 		{
-			if($user->group_id == "6")
+			if($user->group_id == "3")
 			{
 			  	if (Input::method() == 'POST')
 			    {
@@ -72,7 +74,7 @@ class Controller_User extends Controller_App
 					$newpost->save();
 			    }
 			}
-			Response::redirect('admin');
+			Response::redirect('user');
 		}
 		else
 		{
@@ -91,7 +93,7 @@ class Controller_User extends Controller_App
 			$deletedPost->delete();
 		}
 
-		Response::redirect('admin');
+		Response::redirect('user');
 		
 	}
 
@@ -104,7 +106,7 @@ class Controller_User extends Controller_App
 		$user = Model_User::get_one($sessionUsername);
 		if(isset($user))
 		{
-			if($user->group_id == "6")
+			if($user->group_id == "3")
 			{
 			  	if (Input::method() == 'POST')
 			    {
@@ -115,7 +117,7 @@ class Controller_User extends Controller_App
 			    }
 			}
 
-			Response::redirect('admin');
+			Response::redirect('user');
 		}
 		else
 		{
@@ -132,7 +134,7 @@ class Controller_User extends Controller_App
 		$user = Model_User::get_one($sessionUsername);
 		if(isset($user))
 		{
-			if($user->group_id == "6")
+			if($user->group_id == "3")
 			{
 			  	if (Input::method() == 'POST')
 			    {
@@ -143,7 +145,7 @@ class Controller_User extends Controller_App
 					$newvideo->save();
 			    }
 			}
-			Response::redirect('admin_video');
+			Response::redirect('user');
 		}
 		else
 		{
@@ -161,7 +163,7 @@ class Controller_User extends Controller_App
 			$deletedVideo->delete();
 		}
 
-		Response::redirect('admin_video');
+		Response::redirect('user');
 	}
 	
 }

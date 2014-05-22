@@ -75,12 +75,12 @@ class Controller_Auth extends Controller_App
 		        }
 		        else
 		        {
-		           
+		           Response::redirect('login');
 		        }
 			}
 			else
 			{
-			    
+			    Response::redirect('login');
 			}
 	    }
 	}
