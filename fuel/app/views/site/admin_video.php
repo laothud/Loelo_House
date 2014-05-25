@@ -25,7 +25,7 @@
     	</tr>
       <?php foreach ($videos as $video): ?>
         <tr>
-          <td><img src="https://i1.ytimg.com/vi_webp/<?= $video->videocode?>/mqdefault.jpg"></td>
+          <td><img src="http://localhost:9999/site/public/img/video_thumb.png"></td>
           <td><input type="text" value="<?= $video->username ?>"></td>
           <td><a href="admin_video_delete/<?= $video->id ?>" class="button delete_button">Delete</a></td>
         </tr>
