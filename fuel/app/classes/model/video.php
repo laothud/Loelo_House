@@ -25,9 +25,9 @@ class Model_Video extends Orm\Model
 		return static::query()->order_by('created_at', 'desc')->get();
     }
 
-    public static function get_one()
+    public static function get_one($videoid)
     {
-    	return static::query()->order_by('created_at', 'desc')->get_one();
+    	return static::query()->where('id',$videoid)->get_one();
     }
 
     public static function get_by_username($username)

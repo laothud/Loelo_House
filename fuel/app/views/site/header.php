@@ -84,10 +84,10 @@ else{?>
     <title>Loelo House</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/foundation.min.css" />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <script src="js/vendor/modernizr.js"></script>
+    <link rel="stylesheet" href="http://localhost:9999/site/public/css/foundation.min.css" />
+    <link rel="stylesheet" href="http://localhost:9999/site/public/css/normalize.css" />
+    <link rel="stylesheet" href="http://localhost:9999/site/public/css/main.css" />
+    <script src="http://localhost:9999/site/public/js/vendor/modernizr.js"></script>
 </head>
 
 <body>
@@ -95,7 +95,7 @@ else{?>
     <nav class="top-bar" data-topbar>
       <ul class="title-area">
         <li class="name">
-          <h1><a href="home"><img src="img/logo.png"></a></h1>
+          <h1><a href="http://localhost:9999/site/public/home"><img src="http://localhost:9999/site/public/img/logo.png"></a></h1>
         </li>
       </ul>
 

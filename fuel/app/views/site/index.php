@@ -17,8 +17,8 @@
     <div class="row">
         <div class="large-8 columns">
             <?php foreach ($posts as $post): ?>
-            <h2 class"blogtitle"><a href="blog_detail.html"><?= $post->title ?></a></h2>
-            <p class="blogdescription"><?= $post->description ?><a href="blog_detail.html"> Read Me...</a></p>
+            <h2 class"blogtitle"><a href="blogdetail/<?= $post->id ?>"><?= $post->title ?></a></h2>
+            <p class="blogdescription"><?= $post->description ?><a href="blogdetail/<?= $post->id ?>.html"> Read Me...</a></p>
             <p class="blogauthor">Date created: <?= $post->created_at ?>   Author: <?= $post->username ?></p>
             <?php endforeach; ?>
         </div>

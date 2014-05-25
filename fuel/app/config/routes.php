@@ -6,6 +6,8 @@ return array(
 	'video' => 'video',
 	'art' => 'art',
 	'events' => 'events',
+	'blogdetail/:id'=>'blogdetail',
+	'videodetail/:id'=>'videodetail',
 	//LOGIN AND LOGOUT
 	'login' => 'auth/login',
 	'logout' => 'auth/logout',
